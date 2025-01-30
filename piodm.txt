@@ -1,0 +1,485 @@
+
+Please build project in debug configuration to get more details about an exception.
+See https://docs.platformio.org/page/projectconf/build_configurations.html
+
+
+--- Terminal on /dev/cu.wchusbserial58CD1829881 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, esp32_exception_decoder, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+[37m[37m[0;32mI (40398) : TICK[0m
+[37m[37m[0;32mI (41400) : TICK[0m
+[37mE[37mSP-ROM:esp32s3-20210327
+[37mB[37muild:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BO[37mO[37mT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x17[37m5[37m8
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x4[37m0[37m3cc700,len:0x2e20
+entry 0x403c9908
+[37m[0;32mI (27) boot: ESP-IDF 5.1.4.241008 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Nov 19 2024 17:31:52[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;[37m3[37m2mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Lab[37me[37ml            Usage          Type ST Offset   Length[0m
+[0;32[37mm[37mI (65) boot:  0 nvs              WiFi data        01 02 0000900[37m0[37m 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data [37m [37m        01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 fac[37mt[37mory          factory app      00 00 00010000 00100000[0m
+[0;[37m3[37m2mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_im[37ma[37mge: segment 0: paddr=00010020 vaddr=3c0a0020 size=2cf14h (18408[37m4[37m) map[0m
+[37m[37m[0;32mI (133) esp_image: segment 1: paddr=0003cf3c vaddr=3fc9a1[37m0[37m0 size=030dch ( 12508) load[0m
+[0;32mI (136) esp_image: segm[37me[37mnt 2: paddr=00040020 vaddr=42000020 size=9ebf4h (650228) map[0[37mm[37m
+[37m[37m[0;32mI (255) esp_image: segment 3: paddr=000dec1c vaddr=3fc9d1[37md[37mc size=015f4h (  5620) load[0m
+[0;32mI (257) esp_image: segm[37me[37mnt 4: paddr=000e0218 vaddr=40374000 size=160f0h ( 90352) load[[37m0[37mm
+[37m[37m[0;32mI (290) boot: Loaded app from partition at offset 0x10000[37m[37m[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[37m[37m[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (302[37m)[37m cpu_start: Pro cpu up.[0m
+[0;32mI (303) cpu_start: Starting[37m [37mapp cpu, entry point is 0x40376c10[0m
+[0;32mI (0) cpu_start:[37m [37mApp cpu up.[0m
+[37m[37m[0;32mI (320) cpu_start: Pro cpu start user code[0m
+[0;32mI [37m([37m320) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (320) cpu_[37ms[37mtart: Application information:[0m
+[0;32mI (323) cpu_start: P[37mr[37moject name:     esp32_arduino_espidf[0m
+[0;32mI (329) cpu_st[37ma[37mrt: App version:      76284ee-dirty[0m
+[0;32mI (335) cpu_sta[37mr[37mt: Compile time:     Nov 19 2024 17:30:27[0m
+[0;32mI (341) c[37mp[37mu_start: ELF file SHA256:  494ca5ae8aeb9411...[0m
+[0;32mI (3[37m4[37m7) cpu_start: ESP-IDF:          5.1.4.241008[0m
+[0;32mI (352[37m)[37m cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (357) cpu_star[37mt[37m: Max chip rev:     v0.99 [0m
+[0;32mI (362) cpu_start: Chip [37mr[37mev:         v0.2[0m
+[0;32mI (367) heap_init: Initializing. R[37mA[37mM available for dynamic allocation:[0m
+[0;32mI (374) heap_in[37mi[37mt: At 3FCA2B70 len 00046BA0 (282 KiB): DRAM[0m
+[0;32mI (380)[37m [37mheap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[37m[[37m0;32mI (387) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[37m[37m[0m
+[0;32mI (393) heap_init: At 600FE010 len 00001FD8 (7 KiB)[37m:[37m RTCRAM[0m
+[0;32mI (400) spi_flash: detected chip: generic[[37m0[37mm
+[0;32mI (404) spi_flash: flash io: dio[0m
+[   408][V][esp[37m3[37m2-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for[37m [37mtype UART_RX (2) successfully set to 0x42008268
+  #0  0x42008268 in _uartDetachBus_RX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:153
+
+[   430][V][es[37mp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42008234
+  #0  0x42008234 in _uartDetachBus_TX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:160
+
+[   441][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42008200
+  #0  0x42008200 in _uartDetachBus_CTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:167
+
+[   453][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x420081cc
+  #0  0x420081cc in _uartDetachBus_RTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:174
+
+[   464][[37mV][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x42008268
+  #0  0x42008268 in _uartDetachBus_RX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:153
+
+[   475][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42008234
+  #0  0x42008234 in _uartDetachBus_TX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:160
+
+[   487][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42008200
+  #0  0x42008200 in _uartDetachBus_CTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:167
+
+[   498][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x420081cc
+  #0  0x420081cc in _uartDetachBus_RTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:174
+
+[   510][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x42008268
+  #0  0x42008268 in _uartDetachBus_RX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:153
+
+[ [37m  521][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42008234
+  #0  0x42008234 in _uartDetachBus_TX at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:160
+
+[   532][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42008200
+  #0  0x42008200 in _uartDetachBus_CTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:167
+
+[   544][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x420081cc
+  #0  0x420081cc in _uartDetachBus_RTS at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:174
+
+[0;32mI (555) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (555) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (558) app_start: Starting scheduler on CPU0[0m
+[0;32mI (563) app_start: Starting scheduler on CPU1[0m
+[0;32mI (563) main_task: Started on CPU0[37m[0m
+[0;32mI (573) main_task: Calling app_main()[0m
+[0;32mI (583) main_task: Returned from app_main()[0m
+[   583][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 44 successfully set to type UART_RX (2) with bus 0x3fc9a110
+  #0  0x3fc9a110 in ?? at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:82
+
+[   603][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 43 successfully set to type UART_TX (3) with bus 0x3fc9a110
+  #0  0x3fc9a110 in ?? at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.c:82
+
+=========== Before Setup Start ===========
+Chip Info:
+-------------------------------------[37m-----
+  Model             : ESP32-S3
+  Package           : 0
+  Revision          : 0.02
+  Cores             : 2
+  CPU Frequency     : 160 MHz
+  XTAL Frequency    : 40 MHz
+  Features Bitfield : 0x00000012
+  Embedded Flash    : No
+  Embedded PSRAM    : No
+  2.4GHz WiFi       : Yes
+  Classic BT        : No
+  BT Low Energy     : Yes
+  IEEE 802.15.4     : No
+------------------------------------------
+INTERNAL Memory Info:
+-----------[37m-------------------------------
+  Total Size        :   352924 B ( 344.7 KB)
+  Free Bytes        :   322392 B ( 314.8 KB)
+  A[37ml[37mlocated Bytes   :    26624 B (  26.0 KB)
+  Minimum Free Bytes:[37m [37m  318036 B ( 310.6 KB)
+  Largest Free Block:   253952 B ( 248.[37m0[37m KB)
+------------------------------------------
+Flash Info:
+[37m-[37m-----------------------------------------
+  Chip Size         [37m:[37m 16777216 B (16 MB)
+  Block Size        :    65536 B (  64.0 K[37mB[37m)
+  Sector Size       :     4096 B (   4.0 KB)
+  Page Size   [37m [37m     :      256 B (   0.2 KB)
+  Bus Speed         : 80 MHz
+  [37mB[37mus Mode          : DIO
+---------------------------------------[37m-[37m--
+Partitions Info:
+-----------------------------------------[37m-[37m
+                nvs : addr: 0x00009000, size:    24.0 KB, typ[37me[37m: DATA, subtype: NVS
+           phy_init : addr: 0x0000F000, s[37mi[37mze:     4.0 KB, type: DATA, subtype: PHY
+            factory :[37m [37maddr: 0x00010000, size:  1024.0 KB, type:  APP, subtype: FACTOR[37mY[37m
+------------------------------------------
+Software Info:
+-[37m-[37m----------------------------------------
+  Compile Date/Time :[37m [37mNov 19 2024 17:30:59
+  ESP-IDF Version   : 5.1.4.241008
+  Ard[37mu[37mino Version   : 3.0.7
+----------------------------------------[37m-[37m-
+Board Info:
+------------------------------------------
+  A[37mr[37mduino Board     : ESP32S3_DEV
+  Arduino Variant   : esp32s3
+ [37m [37mCore Debug Level  : 5
+  Arduino Runs Core : 1
+  Arduino Event[37ms[37m on : 1
+  Arduino USB Mode  : 1
+  CDC On Boot       : 0
+====[37m=[37m======= Before Setup End ============
+[37m[37m[0;32mI (896) pp: pp rom version: e7ae62f[0m
+[0;32mI (897) n[37me[37mt80211: net80211 rom version: e7ae62f[0m
+I (899) wifi:wifi dr[37mi[37mver task: 3fcaf6b8, prio:23, stack:6656, core=0
+I (905) wifi:w[37mi[37mfi firmware version: ec8d504
+I (905) wifi:wifi certification v[37me[37mrsion: v7.0
+I (909) wifi:config NVS flash: enabled
+I (912) wi[37mf[37mi:config nano formating: disabled
+I (916) wifi:Init data frame[37m [37mdynamic rx buffer num: 32
+I (921) wifi:Init static rx mgmt buf[37mf[37mer num: 5
+I (925) wifi:Init management short buffer num: 32
+I[37m [37m(930) wifi:Init dynamic tx buffer num: 32
+I (934) wifi:Init st[37ma[37mtic tx FG buffer num: 2
+I (938) wifi:Init static rx buffer siz[37me[37m: 1600
+I (942) wifi:Init static rx buffer num: 4
+I (946) wifi[37m:[37mInit dynamic rx buffer num: 32
+[0;32mI (950) wifi_init: rx ba[37m [37mwin: 6[0m
+[0;32mI (953) wifi_init: tcpip mbox: 32[0m
+[0;3[37m2[37mmI (957) wifi_init: udp mbox: 6[0m
+[0;32mI (961) wifi_init: [37mt[37mcp mbox: 6[0m
+[0;32mI (965) wifi_init: tcp tx win: 5760[0m[37m
+[37m[0;32mI (969) wifi_init: tcp rx win: 5760[0m
+[0;32mI (973) [37mw[37mifi_init: tcp mss: 1440[0m
+[0;32mI (977) wifi_init: WiFi IRA[37mM[37m OP enabled[0m
+[0;32mI (981) wifi_init: WiFi RX IRAM OP enab[37ml[37med[0m
+[   987][V][NetworkEvents.cpp:119] checkForEvent(): Net[37mw[37mork Event: 9 - WIFI_READY
+[37m[37m[0;32mI (1006) phy_init: phy_version 680,a6008b2,Jun  4 2024,16[37m:[37m41:10[0m
+[37m[37m[0;33mW (1040) phy_init: saving new calibration data because of[37m [37mchecksum failure, mode(0)[0m
+[37mI[37m (1053) wifi:mode : sta (cc:8d:a2:ec:c6:34)
+I (1054) wifi:enab[37ml[37me tsf
+I (1055) ESPNOW: espnow [version: 1.0] init
+[0;32mI (1[37m0[37m56) : ESP-NOW setup done[0m
+[  1056][V][STA.cpp:184] _onStaEv[37me[37mnt(): STA Started
+[  1072][V][NetworkEvents.cpp:119] checkForE[37mv[37ment(): Network Event: 11 - STA_START
+[  1079][V][STA.cpp:110] [37m_[37monStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+[37mI[37m (1087) wifi:[0;32mI (1087) : usb_host_install: 0[0m
+Set ps [37mt[37mype: 1, coexist: 0
+[0;32mI (1087) : usb_host_client_register:[37m [37m0[0m
+
+[0;32mI (1088) : USBH setup done[0m
+=========== Aft[37me[37mr Setup Start ============
+INTERNAL Memory Info:
+------------[37m-[37m-----------------------------
+[37m [37m Total Size        :   352924 B ( 344.7 KB)
+  Free Bytes      [37m [37m :   277180 B ( 270.7 KB)
+  Allocated Bytes   :    71152 B (  [37m6[37m9.5 KB)
+  Minimum Free Bytes:   276964 B ( 270.5 KB)
+  Larges[37mt[37m Free Block:   212992 B ( 208.0 KB)
+--------------------------[37m-[37m---------------
+GPIO Info:
+----------------------------------[37m-[37m-------
+  GPIO : BUS_TYPE[bus/unit][chan]
+  -----------------[37m-[37m--------------------  
+    43 : UART_TX[0]
+    44 : UART_RX[0[37m][37m
+============ After Setup End =============
+[37m[37m[0;32mI (1176) : TICK[0m
+[37m[37m[0;32mI (1569) : New device address: 1[0m
+[0;32mI (1570) : s[37mp[37meed: 1 dev_addr 1 vMaxPacketSize0 64 bConfigurationValue 1[0m[37m
+[37m[0;32mI (1570) : bLength: 18[0m
+[0;32mI (1573) : bDescripto[37mr[37mType(device): 1[0m
+[0;32mI (1577) : bcdUSB: 0x200[0m
+[0;3[37m2[37mmI (1580) : bDeviceClass: 0xef[0m
+[0;32mI (1584) : bDeviceSu[37mb[37mClass: 0x02[0m
+[0;32mI (1588) : bDeviceProtocol: 0x01[0m
+[37m[[37m0;32mI (1592) : bMaxPacketSize0: 64[0m
+[0;32mI (1595) : idVe[37mn[37mdor: 0x9516[0m
+[0;32mI (1599) : idProduct: 0x4027[0m
+[0;3[37m2[37mmI (1602) : bcdDevice: 0x120[0m
+[0;32mI (1606) : iManufactur[37me[37mr: 2[0m
+[0;32mI (1609) : iProduct: 3[0m
+[0;32mI (1612) : [37mi[37mSerialNumber: 0[0m
+[0;32mI (1616) : bNumConfigurations: 1[0[37mm[37m
+[0;32mI (1620) : bLength: 9[0m
+[0;32mI (1623) : Configura[37mt[37mion Descriptor[0m
+[0;32mI (1627) : bLength: 9[0m
+[0;32mI [37m([37m1630) : bDescriptorType(config): 2[0m
+[0;32mI (1634) : wTota[37ml[37mLength: 317[0m
+[0;32mI (1638) : bNumInterfaces: 5[0m
+[0;3[37m2[37mmI (1641) : bConfigurationValue: 1[0m
+[0;32mI (1645) : iConf[37mi[37mguration: 4[0m
+[0;32mI (1649) : bmAttributes(): 0x80[0m
+[[37m0[37m;32mI (1653) : bMaxPower: 10 = 20 mA[0m
+[0;32mI (1657) : Int[37me[37mrface Descriptor[0m
+[0;32mI (1660) : bLength: 9[0m
+[0;32m[37mI[37m (1663) : bDescriptorType (interface): 4[0m
+[0;32mI (1668) :[37m [37mbInterfaceNumber: 0[0m
+[0;32mI (1672) : bAlternateSetting: 0[37m[37m[0m
+[0;32mI (1676) : bNumEndpoints: 2[0m
+[0;32mI (1679) : [37mb[37mInterfaceClass: 0xff[0m
+[0;32mI (1683) : bInterfaceSubClass:[37m [37m0x44[0m
+[0;32mI (1687) : bInterfaceProtocol: 0x00[0m
+[0;3[37m2[37mmI (1691) : iInterface: 5[0m
+[0;32mI (1695) : bInterfaceClas[37ms[37m: 0xff[0m
+[0;32mI (1698) : Endpoint Descriptor[0m
+[0;32mI[37m [37m(1702) : bLength: 7[0m
+[0;32mI (1705) : bDescriptorType (end[37mp[37moint): 5[0m
+[0;32mI (1710) : bEndpointAddress(Out): 0x04[0m[37m[37m
+[0;32mI (1714) : bmAttributes(Bulk): 0x02[0m
+[0;32mI (1718[37m)[37m : wMaxPacketSize: 64[0m
+[0;32mI (1722) : bInterval: 0[0m
+[37m[37m[0;32mI (1725) : Endpoint Descriptor[0m
+[0;32mI (1729) : bLe[37mn[37mgth: 7[0m
+[0;32mI (1732) : bDescriptorType (endpoint): 5[0m[37m[37m
+[0;32mI (1736) : bEndpointAddress(In): 0x84[0m
+[0;32mI (17[37m4[37m1) : bmAttributes(Bulk): 0x02[0m
+[0;32mI (1745) : wMaxPacket[37mS[37mize: 64[0m
+[0;32mI (1749) : bInterval: 0[0m
+[0;32mI (1752[37m)[37m : Interface Descriptor[0m
+[0;32mI (1755) : bLength: 9[0m
+[37m[37m[0;32mI (1758) : bDescriptorType (interface): 4[0m
+[0;32mI ([37m1[37m763) : bInterfaceNumber: 1[0m
+[0;32mI (1767) : bAlternateSet[37mt[37ming: 0[0m
+[0;32mI (1771) : bNumEndpoints: 0[0m
+[0;32mI (1[37m7[37m74) : bInterfaceClass: 0x01[0m
+[0;32mI (1778) : bInterfaceSu[37mb[37mClass: 0x01[0m
+[0;32mI (1782) : bInterfaceProtocol: 0x00[0m[37m[37m
+[0;32mI (1786) : iInterface: 3[0m
+[0;32mI (1790) : bInterf[37ma[37mceClass: 0x01[0m
+[0;32mI (1793) : Unknown USB Descriptor Typ[37me[37m: 0xb[0m
+[0;32mI (1798) : Unknown USB Descriptor Type: 0xc[[37m0[37mm
+[0;32mI (1803) : Unknown USB Descriptor Type: 0x9[0m
+[0;[37m3[37m2mI (1808) : Unknown USB Descriptor Type: 0xc[0m
+[0;32mI (18[37m1[37m3) : Unknown USB Descriptor Type: 0x9[0m
+[0;32mI (1818) : Un[37mk[37mnown USB Descriptor Type: 0xa[0m
+[0;32mI (1823) : Unknown US[37mB[37m Descriptor Type: 0xa[0m
+[0;32mI (1828) : Interface Descript[37mo[37mr[0m
+[0;32mI (1831) : bLength: 9[0m
+[0;32mI (1834) : bDes[37mc[37mriptorType (interface): 4[0m
+[0;32mI (1839) : bInterfaceNumb[37me[37mr: 2[0m
+[0;32mI (1843) : bAlternateSetting: 0[0m
+[0;32mI [37m([37m1847) : bNumEndpoints: 0[0m
+[0;32mI (1850) : bInterfaceClass[37m:[37m 0x01[0m
+[0;32mI (1854) : bInterfaceSubClass: 0x02[0m
+[0;[37m3[37m2mI (1858) : bInterfaceProtocol: 0x00[0m
+[0;32mI (1862) : iI[37mn[37mterface: 0[0m
+[0;32mI (1865) : bInterfaceClass: 0x01[0m
+[[37m0[37m;32mI (1869) : Interface Descriptor[0m
+[0;32mI (1873) : bLen[37mg[37mth: 9[0m
+[0;32mI (1876) : bDescriptorType (interface): 4[0m[37m[37m
+[0;32mI (1881) : bInterfaceNumber: 2[0m
+[0;32mI (1885) : b[37mA[37mlternateSetting: 1[0m
+[0;32mI (1888) : bNumEndpoints: 2[0m[37m
+[37m[0;32mI (1892) : bInterfaceClass: 0x01[0m
+[0;32mI (1896) : [37mb[37mInterfaceSubClass: 0x02[0m
+[0;32mI (1900) : bInterfaceProtoc[37mo[37ml: 0x00[0m
+[0;32mI (1904) : iInterface: 0[0m
+[0;32mI (190[37m7[37m) : bInterfaceClass: 0x01[0m
+[0;32mI (1911) : Unknown USB De[37ms[37mcriptor Type: 0x7[0m
+[0;32mI (1916) : Unknown USB Descriptor[37m [37mType: 0xb[0m
+[0;32mI (1921) : Endpoint Descriptor[0m
+[0;3[37m2[37mmI (1925) : bLength: 9[0m
+[0;32mI (1928) : bDescriptorType ([37me[37mndpoint): 5[0m
+[0;32mI (1932) : bEndpointAddress(Out): 0x02[37m[[37m0m
+[0;32mI (1937) : bmAttributes(Isochronous): 0x05[0m
+[0;[37m3[37m2mI (1941) : wMaxPacketSize: 336[0m
+[0;32mI (1945) : bInterv[37ma[37ml: 1[0m
+[0;32mI (1948) : Unknown USB Descriptor Type: 0x7[0[37mm[37m
+[0;32mI (1953) : Endpoint Descriptor[0m
+[0;32mI (1957) : [37mb[37mLength: 9[0m
+[0;32mI (1960) : bDescriptorType (endpoint): 5[37m[[37m0m
+[0;32mI (1964) : bEndpointAddress(In): 0x82[0m
+[0;32mI [37m([37m1969) : bmAttributes(Isochronous): 0x01[0m
+[0;32mI (1974) : [37mw[37mMaxPacketSize: 4[0m
+[0;32mI (1977) : bInterval: 1[0m
+[0;3[37m2[37mmI (1980) : Interface Descriptor[0m
+[0;32mI (1984) : bLength[37m:[37m 9[0m
+[0;32mI (1987) : bDescriptorType (interface): 4[0m
+[37m[[37m0;32mI (1992) : bInterfaceNumber: 3[0m
+[0;32mI (1995) : bAlt[37me[37mrnateSetting: 0[0m
+[0;32mI (1999) : bNumEndpoints: 0[0m
+[[37m0[37m;32mI (2003) : bInterfaceClass: 0x01[0m
+[0;32mI (2007) : bIn[37mt[37merfaceSubClass: 0x02[0m
+[0;32mI (2011) : bInterfaceProtocol:[37m [37m0x00[0m
+[0;32mI (2015) : iInterface: 0[0m
+[0;32mI (2018) [37m:[37m bInterfaceClass: 0x01[0m
+[0;32mI (2022) : Interface Descrip[37mt[37mor[0m
+[0;32mI (2026) : bLength: 9[0m
+[0;32mI (2029) : bDe[37ms[37mcriptorType (interface): 4[0m
+[0;32mI (2034) : bInterfaceNum[37mb[37mer: 3[0m
+[0;32mI (2037) : bAlternateSetting: 1[0m
+[0;32mI[37m [37m(2041) : bNumEndpoints: 1[0m
+[0;32mI (2045) : bInterfaceClas[37ms[37m: 0x01[0m
+[0;32mI (2048) : bInterfaceSubClass: 0x02[0m
+[0[37m;[37m32mI (2053) : bInterfaceProtocol: 0x00[0m
+[0;32mI (2057) : i[37mI[37mnterface: 0[0m
+[0;32mI (2060) : bInterfaceClass: 0x01[0m
+[37m[[37m0;32mI (2064) : Unknown USB Descriptor Type: 0x7[0m
+[0;32mI [37m([37m2069) : Unknown USB Descriptor Type: 0xb[0m
+[0;32mI (2074) :[37m [37mEndpoint Descriptor[0m
+[0;32mI (2077) : bLength: 9[0m
+[0;[37m3[37m2mI (2080) : bDescriptorType (endpoint): 5[0m
+[0;32mI (2085)[37m [37m: bEndpointAddress(In): 0x81[0m
+[0;32mI (2089) : bmAttribute[37ms[37m(Isochronous): 0x05[0m
+[0;32mI (2094) : wMaxPacketSize: 336[37m[[37m0m
+[0;32mI (2098) : bInterval: 1[0m
+[0;32mI (2101) : Unkno[37mw[37mn USB Descriptor Type: 0x7[0m
+[0;32mI (2106) : Interface Des[37mc[37mriptor[0m
+[0;32mI (2110) : bLength: 9[0m
+[0;32mI (2112) :[37m [37mbDescriptorType (interface): 4[0m
+[0;32mI (2117) : bInterfac[37me[37mNumber: 4[0m
+[0;32mI (2121) : bAlternateSetting: 0[0m
+[0;[37m3[37m2mI (2125) : bNumEndpoints: 2[0m
+[0;32mI (2128) : bInterface[37mC[37mlass: 0x01[0m
+[0;32mI (2132) : bInterfaceSubClass: 0x03[0m[37m
+[37m[0;32mI (2136) : bInterfaceProtocol: 0x00[0m
+[0;32mI (2140)[37m [37m: iInterface: 3[0m
+[0;32mI (2144) : bInterfaceClass: 0x01[0[37mm[37m
+[0;32mI (2148) : Claiming a MIDI device![0m
+[0;32mI (2152[37m)[37m : Unknown USB Descriptor Type: 0x7[0m
+[0;32mI (2157) : Unkn[37mo[37mwn USB Descriptor Type: 0x6[0m
+[0;32mI (2161) : Unknown USB [37mD[37mescriptor Type: 0x6[0m
+[0;32mI (2166) : Unknown USB Descript[37mo[37mr Type: 0x6[0m
+[0;32mI (2171) : Unknown USB Descriptor Type:[37m [37m0x9[0m
+[0;32mI (2176) : Unknown USB Descriptor Type: 0x9[0m[37m[37m
+[0;32mI (2181) : Unknown USB Descriptor Type: 0x9[0m
+[0;32[37mm[37mI (2186) : Endpoint Descriptor[0m
+[0;32mI (2189) : bLength: [37m9[37m[0m
+[0;32mI (2192) : bDescriptorType (endpoint): 5[0m
+[0;[37m3[37m2mI (2197) : bEndpointAddress(Out): 0x03[0m
+[0;32mI (2201) :[37m [37mbmAttributes(Bulk): 0x02[0m
+[0;32mI (2206) : wMaxPacketSize:[37m [37m64[0m
+[0;32mI (2209) : bInterval: 0[0m
+[0;32mI (2212) : E[37mn[37mdpoint: 0x03[0m
+[0;32mI (2216) : Out data_buffer_size: 64[0[37mm[37m
+[0;32mI (2220) : Unknown USB Descriptor Type: 0x5[0m
+[0;3[37m2[37mmI (2225) : Endpoint Descriptor[0m
+[0;32mI (2228) : bLength:[37m [37m9[0m
+[0;32mI (2231) : bDescriptorType (endpoint): 5[0m
+[0[37m;[37m32mI (2236) : bEndpointAddress(In): 0x83[0m
+[0;32mI (2240) :[37m [37mbmAttributes(Bulk): 0x02[0m
+[0;32mI (2244) : wMaxPacketSize:[37m [37m64[0m
+[0;32mI (2248) : bInterval: 0[0m
+[0;32mI (2251) : E[37mn[37mdpoint: 0x83[0m
+[0;32mI (2255) : Unknown USB Descriptor Type[37m:[37m 0x6[0m
+[0;32mI (2259) : midi_transfer_cb context: 0[0m
+[ [37m [37m2264][V][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - Me[37mm[37mSize[48] - Freq=10000000Hz
+[  2283][V][esp32-hal-periman.c:235[37m][37m perimanSetBusDeinit(): Deinit function for type RMT_TX (10) su[37mc[37mcessfully set to 0x42008be4
+  #0  0x42008be4 in _rmtDetachBus at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c:136
+
+[  2294][V][esp32-hal-periman.c:23[37m5] perimanSetBusDeinit(): Deinit function for type RMT_RX (11) successfully set to 0x42008be4
+  #0  0x42008be4 in _rmtDetachBus at /Users/julian/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.c:136
+
+[0;32mI (2307) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[  2307][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 48 successfully set to type RMT_TX (10) with bus 0x3fcb55c4
+[37m[  2328][V][esp32-hal-rmt.c:305] _rmtWrite(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  2337][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  2348][V][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] - Freq=10000000Hz
+[  2357][V][esp32-hal-rmt.c:305] _rmtWrite(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  2366][V][esp3[37m2[37m-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently in Loop Mode:[37m [37m[NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[37m[0;32mI (2377) : TICK[0m
+[37m[37m[0;32mI (2655) : midi_transfer_cb context: 1[0m
+[  2655][V][e[37ms[37mp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] -[37m [37mFreq=10000000Hz
+[  2668][V][esp32-hal-rmt.c:305] _rmtWrite(): [37mG[37mPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  [37m2[37m677][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently [37mi[37mn Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  2688][37m[[37mV][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[[37m4[37m8] - Freq=10000000Hz
+[  2696][V][esp32-hal-rmt.c:305] _rmtWrit[37me[37m(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1[37m[37m
+[  2706][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Curre[37mn[37mtly in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[0[37m;[37m32mI (2717) : midi_transfer_cb context: 2[0m
+[  2717][V][esp3[37m2[37m-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] - Fr[37me[37mq=10000000Hz
+[  2730][V][esp32-hal-rmt.c:305] _rmtWrite(): GPI[37mO[37m: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  273[37m9[37m][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently in [37mL[37moop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[37m[0;32mI (2750) : midi_transfer_cb context: 3[0m
+[  2751][V][e[37ms[37mp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] -[37m [37mFreq=10000000Hz
+[  2763][V][esp32-hal-rmt.c:305] _rmtWrite(): [37mG[37mPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  [37m2[37m773][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently [37mi[37mn Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  2784][37m[[37mV][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[[37m4[37m8] - Freq=10000000Hz
+[  2792][V][esp32-hal-rmt.c:305] _rmtWrit[37me[37m(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1[37m[37m
+[  2802][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Curre[37mn[37mtly in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[37m[0;32mI (2824) : midi_transfer_cb context: 4[0m
+[  2825][V][e[37ms[37mp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] -[37m [37mFreq=10000000Hz
+[  2837][V][esp32-hal-rmt.c:305] _rmtWrite(): [37mG[37mPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  [37m2[37m847][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently [37mi[37mn Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  2857][37m[[37mV][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[[37m4[37m8] - Freq=10000000Hz
+[  2866][V][esp32-hal-rmt.c:305] _rmtWrit[37me[37m(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1[37m[37m
+[  2875][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Curre[37mn[37mtly in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[0[37m;[37m32mI (2886) : midi_transfer_cb context: 5[0m
+[  2886][V][esp3[37m2[37m-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] - Fr[37me[37mq=10000000Hz
+[  2899][V][esp32-hal-rmt.c:305] _rmtWrite(): GPI[37mO[37m: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  290[37m8[37m][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently in [37mL[37moop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[[37m  2920][V][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - [37mM[37memSize[48] - Freq=10000000Hz
+[  2928][V][esp32-hal-rmt.c:305] [37m_[37mrmtWrite(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Tim[37me[37mout: -1
+[  2938][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48[37m [37m- Currently in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel:[37m [37mNO
+[  2949][V][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MO[37mD[37mE - MemSize[48] - Freq=10000000Hz
+[  2957][V][esp32-hal-rmt.c:[37m3[37m05] _rmtWrite(): GPIO: 48 - Request: 24 RMT Symbols - Blocking [37m-[37m Timeout: -1
+[  2966][V][esp32-hal-rmt.c:306] _rmtWrite(): GPI[37mO[37m: 48 - Currently in Loop Mode: [NO] | Asked to Loop: NO, LoopCa[37mn[37mcel: NO
+[37m[37m[0;32mI (3379) : TICK[0m
+[37m[37m[0;32mI (3400) : midi_transfer_cb context: 6[0m
+[  3400][V][e[37ms[37mp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] -[37m [37mFreq=10000000Hz
+[  3413][V][esp32-hal-rmt.c:305] _rmtWrite(): [37mG[37mPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  [37m3[37m422][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently [37mi[37mn Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  3433][37m[[37mV][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[[37m4[37m8] - Freq=10000000Hz
+[  3442][V][esp32-hal-rmt.c:305] _rmtWrit[37me[37m(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1[37m[37m
+[  3451][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Curre[37mn[37mtly in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[0[37m;[37m32mI (3462) : midi_transfer_cb context: 7[0m
+[0;32mI (3462) [37m:[37m Control Change: Channel 0, Controller 74, Value 62[0m
+[0;32[37mm[37mI (3463) : midi_transfer_cb context: 2[0m
+[  3466][V][esp32-h[37ma[37ml-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] - Freq=[37m1[37m0000000Hz
+[  3486][V][esp32-hal-rmt.c:305] _rmtWrite(): GPIO: [37m4[37m8 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  3495][[37mV[37m][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently in Loo[37mp[37m Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  3506][V][es[37mp[37m32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] - [37mF[37mreq=10000000Hz
+[  3514][V][esp32-hal-rmt.c:305] _rmtWrite(): G[37mP[37mIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  3[37m5[37m24][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently i[37mn[37m Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[37m[0;32mI (3760) : midi_transfer_cb context: 7[0m
+[  3760][V][e[37ms[37mp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[48] -[37m [37mFreq=10000000Hz
+[  3773][V][esp32-hal-rmt.c:305] _rmtWrite(): [37mG[37mPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1
+[  [37m3[37m782][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Currently [37mi[37mn Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[  3793][37m[[37mV][esp32-hal-rmt.c:454] rmtInit(): GPIO 48 - TX MODE - MemSize[[37m4[37m8] - Freq=10000000Hz
+[  3802][V][esp32-hal-rmt.c:305] _rmtWrit[37me[37m(): GPIO: 48 - Request: 24 RMT Symbols - Blocking - Timeout: -1[37m[37m
+[  3811][V][esp32-hal-rmt.c:306] _rmtWrite(): GPIO: 48 - Curre[37mn[37mtly in Loop Mode: [NO] | Asked to Loop: NO, LoopCancel: NO
+[37m[37m[0;32mI (4380) : TICK[0m
+[37m[37m[0;32mI (5382) : TICK[0m
+[37m[37m[0;32mI (6384) : TICK[0m
+[37m[37m[0;32mI (7386) : TICK[0m
+[37m[37m[0;32mI (8388) : TICK[0m
+[37m[37m[0;32mI (9390) : TICK[0m
+[37m[37m[0;32mI (10392) : TICK[0m

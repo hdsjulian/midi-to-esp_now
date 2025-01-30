@@ -4,7 +4,8 @@
 #include "usbhhelp.hpp"
 #include "esp_now.h"
 #include <WiFi.h>
-
+#define log_v(...)
+#include <esp_log.h>
 //#define MIDIOUTTEST 1
 #if MIDIOUTTEST
 #include <elapsedMillis.h>
@@ -24,6 +25,7 @@ usb_transfer_t *MIDIOut = NULL;
 usb_transfer_t *MIDIIn[MIDI_IN_BUFFERS] = {NULL};
 #define MSG_MIDI 116
 #define MSG_ANIMATION 5
+
 
 enum animationEnum {
     OFF,
@@ -92,43 +94,50 @@ static void midi_transfer_cb(usb_transfer_t *transfer)
         uint8_t data1 = p[i+2];
         uint8_t data2 = p[i+3];
         if (status & 0x0F != 0) {
-          return;
+            
         }
-        switch (status & 0xF0) {
-          case 0x80: // Note Off
-            digitalWrite(LED_BUILTIN, LOW);
-            animationMessage.animationParams.midi.note = data1;
-            animationMessage.animationParams.midi.velocity = 0;
-            esp_now_send(broadcastAddress, (uint8_t *) &animationMessage, sizeof(animationMessage));
+        else {
+            switch (status & 0xF0) {
+            case 0x80: // Note Off
+                ESP_LOGI("", "Note Off: Channel %d, Note %d, Velocity %d", status & 0x0F, data1, data2);
+                digitalWrite(LED_BUILTIN, LOW);
+                animationMessage.animationType = MIDI;
+                animationMessage.animationParams.midi.note = data1;
+                animationMessage.animationParams.midi.velocity = 0;
+                esp_now_send(broadcastAddress, (uint8_t *) &animationMessage, sizeof(animationMessage));
+                break;
+            case 0x90: // Note On
+                ESP_LOGI("", "Note On: Channel %d, Note %d, Velocity %d", status & 0x0F, data1, data2);
+                animationMessage.animationType = MIDI;
+                animationMessage.animationParams.midi.note = data1;
+                animationMessage.animationParams.midi.velocity = data2;
+                rgbLedWrite(LED_BUILTIN, data2*2, data2*2, data2*2);
+                esp_now_send(broadcastAddress, (uint8_t *) &animationMessage, sizeof(animationMessage));
             break;
-          case 0x90: // Note On
-            animationMessage.animationParams.midi.note = data1;
-            animationMessage.animationParams.midi.velocity = data2;
-            neopixelWrite(LED_BUILTIN, data2*2, data2*2, data2*2);
-            esp_now_send(broadcastAddress, (uint8_t *) &animationMessage, sizeof(animationMessage));
-          break;
-          case 0xA0: // Polyphonic Key Pressure (Aftertouch)
-            ESP_LOGI("", "Polyphonic Key Pressure: Channel %d, Note %d, Pressure %d", status & 0x0F, data1, data2);
-            break;
-          case 0xB0: // Control Change
-            ESP_LOGI("", "Control Change: Channel %d, Controller %d, Value %d", status & 0x0F, data1, data2);
-            break;
-          case 0xC0: // Program Change
-            ESP_LOGI("", "Program Change: Channel %d, Program %d", status & 0x0F, data1);
-            break;
-          case 0xD0: // Channel Pressure (Aftertouch)
-            ESP_LOGI("", "Channel Pressure: Channel %d, Pressure %d", status & 0x0F, data1);
-            break;
-          case 0xE0: // Pitch Bend Change
-            ESP_LOGI("", "Pitch Bend Change: Channel %d, LSB %d, MSB %d", status & 0x0F, data1, data2);
-            break;
-          default:
-            ESP_LOGI("", "Unknown MIDI message: %02x %02x %02x %02x", p[i], p[i+1], p[i+2], p[i+3]);
-            break;
+            case 0xA0: // Polyphonic Key Pressure (Aftertouch)
+                ESP_LOGI("", "Polyphonic Key Pressure: Channel %d, Note %d, Pressure %d", status & 0x0F, data1, data2);
+                break;
+            case 0xB0: // Control Change
+                ESP_LOGI("", "Control Change: Channel %d, Controller %d, Value %d", status & 0x0F, data1, data2);
+                break;
+            case 0xC0: // Program Change
+                ESP_LOGI("", "Program Change: Channel %d, Program %d", status & 0x0F, data1);
+                break;
+            case 0xD0: // Channel Pressure (Aftertouch)
+                ESP_LOGI("", "Channel Pressure: Channel %d, Pressure %d", status & 0x0F, data1);
+                break;
+            case 0xE0: // Pitch Bend Change
+                ESP_LOGI("", "Pitch Bend Change: Channel %d, LSB %d, MSB %d", status & 0x0F, data1, data2);
+                break;
+            default:
+                ESP_LOGI("", "Unknown MIDI message: %02x %02x %02x %02x", p[i], p[i+1], p[i+2], p[i+3]);
+                break;
+            }
         }
       }
+      ESP_LOGI("", "midi_transfer_cb In: %d bytes", transfer->actual_num_bytes);
       esp_err_t err = usb_host_transfer_submit(transfer);
-      if (err != ESP_OK) {
+    if (err != ESP_OK) {
         ESP_LOGI("", "usb_host_transfer_submit In fail: %x", err);
       }
     }
@@ -266,8 +275,7 @@ void show_config_desc_full(const usb_config_desc_t *config_desc)
 void setup()
 {
   WiFi.mode(WIFI_STA);
-
-  WiFi.mode(WIFI_STA);
+  esp_log_level_set("*", ESP_LOG_INFO);
   if (esp_now_init() != 0) {
     Serial.println("Error initializing ESP-NOW");
     return;
@@ -287,10 +295,15 @@ void setup()
 
 void loop()
 {
-    if (millis() > lastTime+1000) {
-        lastTime = millis();
-        ESP_LOGI("", "TICK");
-    }
+
+if (lastTime+1000 < millis()) {
+    lastTime = millis();
+    animationMessage.animationType = MIDI;
+    animationMessage.animationParams.midi.note = 60;
+    animationMessage.animationParams.midi.velocity = 5;
+    esp_now_send(broadcastAddress, (uint8_t *) &animationMessage, sizeof(animationMessage));
+}
+
   usbh_task();
 #ifdef MIDIOUTTEST
   if (isMIDIReady && (MIDIOutTimer > 1000)) {
